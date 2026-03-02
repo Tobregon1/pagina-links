@@ -1,0 +1,300 @@
+/* Configuraciones generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+    background-color: #121212;
+    /* Fondo casi negro para contraste */
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 10px;
+    /* Un poco de margen en móviles */
+    transition: background-color 0.3s ease;
+}
+
+/* El contenedor principal con efecto Glassmorphism */
+.container {
+    width: 95%;
+    max-width: 650px;
+    padding: 35px;
+    background-color: rgba(36, 36, 36, 0.85);
+    /* Semi-transparente */
+    backdrop-filter: blur(12px);
+    /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    /* Unificado */
+    margin: 20px auto;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Navegación superior */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.top-nav .actions {
+    display: flex;
+    gap: 20px;
+}
+
+.top-nav .actions i {
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0.85;
+}
+
+.top-nav .actions i:hover {
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+/* Logo */
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+    /* Tamaño optimizado */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Perfil */
+.profile {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 24px;
+    /* Unificado */
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.username {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/* Redes Sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.6rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+/* Colores de marca al pasar el mouse */
+.social-icons a[data-label="Instagram"]:hover {
+    color: #E1306C;
+}
+
+.social-icons a[data-label="Facebook"]:hover {
+    color: #1877F2;
+}
+
+.social-icons a[data-label="YouTube"]:hover {
+    color: #FF0000;
+}
+
+/* Tooltip perfeccionado */
+.social-icons a::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background-color: #333;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.social-icons a:hover::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+body.light-mode .social-icons a::after {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-icons a:hover {
+    transform: scale(1.25);
+}
+
+/* "Suscribite" text */
+.subscribe-text {
+    position: absolute;
+    top: -20px;
+    right: -75px;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1rem;
+    transform: rotate(-10deg);
+    opacity: 0.8;
+}
+
+/* Sección de Links */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Tarjeta Destacada */
+.featured-link {
+    background-color: rgba(44, 44, 44, 0.6);
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.featured-link:hover {
+    transform: translateY(-3px);
+    background-color: rgba(50, 50, 50, 0.8);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.featured-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.featured-title {
+    padding: 18px;
+    text-align: center;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+/* Botones Principales */
+.link-btn {
+    display: flex;
+    align-items: center;
+    background-color: rgba(44, 44, 44, 0.6);
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 25px;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.link-btn i {
+    font-size: 1.25rem;
+    width: 35px;
+}
+
+.link-btn span {
+    flex-grow: 1;
+    text-align: center;
+    margin-right: 35px;
+    letter-spacing: 0.5px;
+}
+
+.link-btn:hover {
+    background-color: rgba(60, 60, 60, 0.8);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+    opacity: 1;
+}
+
+.footer-logo img {
+    height: 65px;
+    width: auto;
+}
+
+/* --- MODO CLARO --- */
+body.light-mode {
+    background-color: #f0f2f5;
+    color: #1a1a1a;
+}
+
+body.light-mode .container {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .profile-img {
+    border-color: #000;
+}
+
+body.light-mode .logo img,
+body.light-mode .footer-logo img {
+    filter: invert(1);
+}
+
+body.light-mode .social-icons a {
+    color: #1a1a1a;
+}
+
+body.light-mode .featured-link,
+body.light-mode .link-btn {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #1a1a1a;
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+body.light-mode .link-btn:hover {
+    background-color: #fff;
+    border-color: rgba(0, 0, 0, 0.2);
+}
