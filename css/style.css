@@ -124,6 +124,10 @@ body {
     color: #FF0000;
 }
 
+.social-icons a[data-label="TikTok"]:hover {
+    color: #25F4EE;
+}
+
 /* Tooltip perfeccionado */
 .social-icons a::after {
     content: attr(data-label);
