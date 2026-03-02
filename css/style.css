@@ -159,15 +159,20 @@ body.light-mode .social-icons a::after {
     transform: scale(1.25);
 }
 
-/* "Suscribite" text */
+/* "Suscribite" text perfected to point at the icon */
 .subscribe-text {
     position: absolute;
-    top: -20px;
-    right: -75px;
+    top: -24px;
+    /* Ajustado para subir un poco */
+    right: -45px;
+    /* Movido a la izquierda para acercarse al icono */
     font-family: 'Brush Script MT', cursive;
-    font-size: 1rem;
-    transform: rotate(-10deg);
-    opacity: 0.8;
+    font-size: 1.1rem;
+    /* Un poco más grande para legibilidad */
+    transform: rotate(15deg);
+    /* Rotación invertida para que la flecha ⤵ apunte abajo-izquierda */
+    opacity: 0.9;
+    white-space: nowrap;
 }
 
 /* Sección de Links */
